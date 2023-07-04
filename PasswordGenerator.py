@@ -1,12 +1,8 @@
-import random
+import secrets
+import string
 
-lower = 'abcdefghijklmnopqrstuvwxyz'
-upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-numbers = '0123456789'
-symbols = "[]{}()*;/,._-"
-
-all = lower + upper + numbers + symbols
-length = 15
-password = "".join(random.sample(all,length))
+alphabet = string.ascii_letters + string.digits
+password = "".join(secrets.choice(alphabet)
+for i in range(15))
 
 print(password)
